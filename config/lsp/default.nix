@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+    imports = [];
+
     plugins.lsp = {
         lazyLoad = {
             enable = true;

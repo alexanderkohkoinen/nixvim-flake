@@ -1,0 +1,5 @@
+{
+    imports = [
+        ./blink-cmp.nix
+    ];
+}

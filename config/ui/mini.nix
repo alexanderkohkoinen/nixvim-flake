@@ -1,5 +1,4 @@
 {
-    plugins.mini.enable = true;
     plugins.mini.mockDevIcons = true;
 
     plugins.mini.modules.files = {
@@ -17,13 +16,6 @@
 
     plugins.mini.modules.icons = {};
 
-    plugins.mini.modules.pairs = {
-        modes = { 
-            insert = true;
-            command = false;
-            terminal = false;
-        };
-    };
 
 
     plugins.mini.modules.starter = {
@@ -62,15 +54,4 @@
         };
     };
 
-    plugins.mini.modules.surround = {
-        mappings = {
-            add = "gsa";
-            delete = "gsd";
-            find = "gsf";
-            find_left = "gsF";
-            highlight = "gsh";
-            replace = "gsr";
-            update_n_lines = "gsn";
-        };
-    };
 }

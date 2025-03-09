@@ -1,13 +1,12 @@
 { 
     imports = [
-        ./blink-cmp.nix
-        ./grug.nix
-        ./lsp.nix
-        ./mini.nix
-        ./snacks.nix
-        ./styles.nix
-        ./treesitter.nix
-        ./which-key.nix
+        ./ai
+        ./coding
+        ./editor
+        ./lang
+        ./lsp
+        ./treesitter
+        ./ui
     ];
 
     config = {
@@ -37,6 +36,7 @@
 
         plugins = {
             lz-n.enable = true;
+            mini.enable = true;
         };
 
     };
