@@ -11,7 +11,7 @@
             cmake.enable = true;
             html.enable = true;
             jsonls.enable = true;
-            lua-ls.enable = true;
+            lua_ls.enable = true;
             nixd.enable = true;
             yamlls.enable = true;
         };
