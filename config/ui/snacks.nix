@@ -3,18 +3,11 @@
         lazyLoad = {
             enable = true;
             settings = {
-                dashboard = {
-                    enabled = true;
-                };
+                event = "DeferredUIEnter";
 
                 notifier = {
                     enabled = true;
                     top_down = false;
-                };
-
-                explorer = {
-                    enabled = true;
-                    replace_netrw = true;
                 };
 
                 statuscolumn = {

@@ -1,5 +1,13 @@
 {
+    plugins.mini.lazyLoad = {
+        enable = true; 
+        settings.event = "DeferredUIEnter";
+    };
+
     plugins.mini.mockDevIcons = true;
+
+
+    plugins.mini.modules.animate = {};
 
     plugins.mini.modules.files = {
         windows = {
@@ -12,6 +20,21 @@
             use_as_default_explorer = true;
         };
     };
+
+    keymaps = [
+        {
+            mode = "n";
+            action = "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), true)<CR>";
+            key = "<leader>fm";
+            options.desc = "Open mini.files (Directory of current file)";
+        }
+        {
+            mode = "n";
+            action = "<cmd>lua MiniFiles.open(vim.uv.cwd())<CR>";
+            key = "<leader>fM";
+            options.desc = "Open mini.files (CWD)";
+        }
+    ];
 
 
     plugins.mini.modules.icons = {};

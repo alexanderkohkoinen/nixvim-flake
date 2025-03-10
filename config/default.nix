@@ -7,6 +7,8 @@
         ./lsp
         ./treesitter
         ./ui
+
+        ./commands
     ];
 
     config = {
@@ -22,9 +24,10 @@
 
         opts = {
             autowrite = true;
-            # clipboard = ''
-            #     vim.env.SSH_TTY and "" or "unnamedplus"
-            # '';
+            backup = true;
+            clipboard = {
+                register.__raw = ''vim.env.SSH_TTY and "" or "unnamedplus"'';
+            };
             completeopt = "menu,menuone,noselect";
             confirm = true;
             cursorline = true;
@@ -50,6 +53,7 @@
             swapfile = false;
             
             tabstop = 2;
+            termguicolors = true;
 
             undofile = true;
             undolevels = 10000;

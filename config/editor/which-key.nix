@@ -1,20 +1,19 @@
 {
-    plugins.which-key.lazyLoad = {
+    plugins.which-key = {
         enable = true;
+        lazyLoad.settings.event = "DeferredUIEnter";
         settings = {
-            event = "DeferredUIEnter";
             icons = {
                 breadcrumb = "»";
                 group = "+";
                 separator = ""; # ➜
             };
+
             win = {
                 border = "rounded";
-                padding = [
-                    1
-                    1
-                ];
+                padding = [ 1 1 ];
             };
+
             spec = [
                 # General Mappings
                 {
