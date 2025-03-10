@@ -1,23 +1,22 @@
 {
     plugins.snacks = {
-        lazyLoad = {
-            enable = true;
-            settings = {
-                event = "DeferredUIEnter";
+        enable = true;
+        settings = {
 
-                notifier = {
-                    enabled = true;
-                    top_down = false;
-                };
+            notifier = {
+                enabled = true;
+                top_down = false;
+            };
 
-                statuscolumn = {
-                    enabled = true;
-                };
+            statuscolumn = {
+                enabled = true;
+            };
 
 
-                picker = {
-                    sources = {
-                        explorer = {};
+            picker = {
+                sources = {
+                    explorer = {
+
                     };
                 };
             };

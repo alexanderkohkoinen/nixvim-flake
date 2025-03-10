@@ -37,25 +37,25 @@
         }
         {
             mode = "n";
-            key = "<leader>fh";
+            key = "<leader>tfh";
             action = "<cmd>lua require('telescope.builtin').help_tags()<CR>";
             options.desc = "Find Help";
         }
         {
             mode = "n";
-            key = "<leader>fd";
+            key = "<leader>tfd";
             action = "<cmd>lua require('telescope.builtin').diagnostics()<CR>";
             options.desc = "Find Diagnostics";
         }
         {
             mode = "n";
-            key = "<leader>ft";
+            key = "<leader>tft";
             action = "<cmd>lua require('telescope.builtin').treesitter()<CR>";
             options.desc = "Find Treesitter";
         }
         {
             mode = "n";
-            key = "<leader>fm";
+            key = "<leader>tfm";
             action = "<cmd>lua require('telescope.builtin').marks()<CR>";
             options.desc = "Find Marks";
         }
