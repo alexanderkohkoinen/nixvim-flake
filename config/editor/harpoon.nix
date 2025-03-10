@@ -27,7 +27,7 @@
         {
             mode = "n";
             action.__raw = "require('harpoon.ui').nav_next";
-            key = "<leader>hh";
+            key = "<leader>hn";
             options = { 
                 silent = true; 
                 desc = "Go to next harpoon file";
@@ -36,7 +36,7 @@
         {
             mode = "n";
             action.__raw = "require('harpoon.ui').nav_prev";
-            key = "<leader>hH";
+            key = "<leader>hp";
             options = { 
                 silent = true; 
                 desc = "Go to previous harpoon file";
