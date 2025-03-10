@@ -1,4 +1,5 @@
 {
+    plugins.mini.lazyLoad.settings.event = "DeferredUIEnter";
     plugins.mini.mockDevIcons = true;
 
     plugins.mini.modules.files = {
