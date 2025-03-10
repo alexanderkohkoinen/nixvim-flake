@@ -1,10 +1,24 @@
 {
     plugins.telescope = {
-        extensions.file-browser.enable = true;
+        enable = true;
+        extensions = {
+
+            file-browser = {
+                enable = true;
+                settings = {
+                    hidden = true;
+                };
+            };
+
+        };
+
+
+        highlightTheme = "Rose Pine";
+
         lazyLoad = {
             enable = true;
             settings = {
-                cmd = "Telescope";
+                cmd = [ "Telescope" "Noice telescope" ];
                 defaults = {
                     file_ignore_patterns = [
                         "^.git/"
@@ -31,33 +45,27 @@
         }
         {
             mode = "n";
-            key = "<leader>b";
+            key = "<leader>bl";
             action = "<cmd>lua require('telescope.builtin').buffers()<CR>";
             options.desc = "Find Buffer";
         }
         {
             mode = "n";
-            key = "<leader>tfh";
-            action = "<cmd>lua require('telescope.builtin').help_tags()<CR>";
-            options.desc = "Find Help";
-        }
-        {
-            mode = "n";
-            key = "<leader>tfd";
+            key = "<leader>dd";
             action = "<cmd>lua require('telescope.builtin').diagnostics()<CR>";
             options.desc = "Find Diagnostics";
         }
-        {
-            mode = "n";
-            key = "<leader>tft";
-            action = "<cmd>lua require('telescope.builtin').treesitter()<CR>";
-            options.desc = "Find Treesitter";
-        }
-        {
-            mode = "n";
-            key = "<leader>tfm";
-            action = "<cmd>lua require('telescope.builtin').marks()<CR>";
-            options.desc = "Find Marks";
-        }
+        # {
+        #     mode = "n";
+        #     key = "<leader>tr";
+        #     action = "<cmd>lua require('telescope.builtin').treesitter()<CR>";
+        #     options.desc = "Find Treesitter";
+        # }
+        # {
+        #     mode = "n";
+        #     key = "<leader>tfm";
+        #     action = "<cmd>lua require('telescope.builtin').marks()<CR>";
+        #     options.desc = "Find Marks";
+        # }
     ];
 }

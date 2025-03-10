@@ -51,7 +51,7 @@
             splitright = true;
 
             swapfile = false;
-            
+
             tabstop = 2;
             termguicolors = true;
 
@@ -69,6 +69,15 @@
             lz-n.enable = true;
             mini.enable = true;
         };
+
+  performance = {
+    byteCompileLua = {
+      enable = true;
+      nvimRuntime = true;
+      configs = true;
+      plugins = true;
+    };
+  };
 
     };
 }
