@@ -7,6 +7,11 @@
                     enabled = true;
                 };
 
+                notifier = {
+                    enabled = true;
+                    top_down = false;
+                };
+
                 explorer = {
                     enabled = true;
                     replace_netrw = true;

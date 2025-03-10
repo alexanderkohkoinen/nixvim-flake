@@ -12,26 +12,53 @@
     config = {
         globals = {
             mapleader = " ";
-            maplocalleader = ",";
+            maplocalleader = "\\";
+            autoformat = "true";
+            # root_lsp_ignore = [ "copilot" ];
+
+            deprecation_warnings = false;
+            trouble_lualine = true;
         };
 
         opts = {
-            number = true;
-            colorcolumn = "80";
+            autowrite = true;
+            # clipboard = ''
+            #     vim.env.SSH_TTY and "" or "unnamedplus"
+            # '';
+            completeopt = "menu,menuone,noselect";
+            confirm = true;
+            cursorline = true;
+
+            foldlevel = 99;
+
+            mouse = "a";
+
             relativenumber = true;
+
+            scrolloff = 4;
+            shiftround = true;
             shiftwidth = 2;
-            tabstop = 2;
-            wrap = false;
-            swapfile = false; # Undotree
-            backup = false; # Undotree
-            undofile = true;
-            hlsearch = false;
-            incsearch = true;
-            termguicolors = true;
-            scrolloff = 8;
+            showmode = false;
+            sidescrolloff = 8;
             signcolumn = "yes";
-            updatetime = 50;
-            foldlevelstart = 99;
+            smartcase = true;
+            smartindent = true;
+            splitbelow = true;
+            splitkeep = "screen";
+            splitright = true;
+
+            swapfile = false;
+            
+            tabstop = 2;
+
+            undofile = true;
+            undolevels = 10000;
+            updatetime = 200;
+
+            virtualedit = "block";
+            
+            wildmode = "longest:full,full";
+            wrap = false;
         };
 
         plugins = {

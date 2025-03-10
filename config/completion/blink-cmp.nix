@@ -13,13 +13,14 @@
     plugins = lib.mkMerge [
     {
         blink-cmp = {
-            enable = true;
+            # enable = true;
             package = inputs.blink-cmp.packages.${pkgs.system}.default;
 
 
             lazyLoad = {
                 enable = true;
                 settings = {
+                    event = "BufEnter";
                     completion = {
                         accept.auto_brackets.enabled = true;
                         ghost_text.enabled = true;
