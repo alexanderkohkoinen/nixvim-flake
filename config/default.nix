@@ -25,9 +25,9 @@
         opts = {
             autowrite = true;
             backup = true;
-            clipboard._raw = ''
-                vim.env.SSH_TTY and "" or "unnamedplus"
-            '';
+            clipboard = {
+                register.__raw = ''vim.env.SSH_TTY and "" or "unnamedplus"'';
+            };
             completeopt = "menu,menuone,noselect";
             confirm = true;
             cursorline = true;

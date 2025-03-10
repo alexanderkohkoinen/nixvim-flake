@@ -1,2 +1,2 @@
-# Run flake during development
-nix run .# -
+### Run flake during development
+nix run .#
