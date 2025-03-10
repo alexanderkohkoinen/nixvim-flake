@@ -1,2 +1,2 @@
-# nixvim-flake
-Flake for NixVim configuration
+# Run flake during development
+nix run .# -
