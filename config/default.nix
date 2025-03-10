@@ -7,6 +7,8 @@
         ./lsp
         ./treesitter
         ./ui
+
+        ./commands
     ];
 
     config = {
@@ -51,6 +53,7 @@
             swapfile = false;
             
             tabstop = 2;
+            termguicolors = true;
 
             undofile = true;
             undolevels = 10000;
