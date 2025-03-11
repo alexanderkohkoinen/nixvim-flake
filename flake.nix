@@ -45,8 +45,6 @@
                     "x86_64-linux"
                 ];
 
-                imports = [
-                    ./flake
-                ];
+                imports = [ ./flake ];
             };
 }

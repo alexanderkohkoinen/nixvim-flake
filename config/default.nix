@@ -8,6 +8,8 @@
         ./treesitter
         ./ui
 
+        ./snacks
+
         ./commands
     ];
 

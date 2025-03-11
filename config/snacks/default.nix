@@ -1,5 +1,9 @@
-{ config, system, ... }:
+{ self, config, system, ... }:
 {
+    imports = [
+        ./explorer.nix
+    ];
+
     plugins.fzf-lua.lazyLoad = {
         enable = true;
         settings = {
@@ -17,7 +21,6 @@
 
                 indent.enabled = true;
                 scroll.enabled = true;
-                explorer.enabled = true;
 
                 notifier = {
                     enabled = true;
@@ -30,6 +33,11 @@
                         open = true;
                         git_hl = true;
                     };
+                };
+
+                bigfile = {
+                    enabled = true;
+                    notify = true;
                 };
 
 
@@ -46,6 +54,7 @@
             };
         };
     };
+
 
     keymaps = [
         {
@@ -96,14 +105,7 @@
                 desc = "Find workspace diagnostics";
             };
         }
-        {
-            mode = "n";
-            key = "<leader>fe";
-            action = ''<cmd>lua Snacks.explorer()<cr>'';
-            options = {
-                desc = "File Explorer";
-            };
-        }
+
         {
             mode = "n";
             key = "<leader>fh";
@@ -342,4 +344,5 @@
         }
 
     ];
+
 }

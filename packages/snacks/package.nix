@@ -29,10 +29,10 @@ vimUtils.buildVimPlugin {
     "snacks.scroll"
     "snacks.words"
     "snacks.picker.core.list"
-    "snacks.image"
-    "snacks.image.init"
-    "snacks.image.placement"
-    "snacks.image.image"
-    "snacks.image.convert"
+    # "snacks.image"
+    # "snacks.image.init"
+    # "snacks.image.placement"
+    # "snacks.image.image"
+    # "snacks.image.convert"
   ];
 }
