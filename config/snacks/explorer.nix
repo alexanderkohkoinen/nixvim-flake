@@ -9,18 +9,18 @@
         {
             mode = "n";
             key = "<leader>e";
-            action = ''<cmd>lua snacks.explorer()<cr>'';
+            action = ''<CMD>lua Snacks.explorer()<CR>'';
             options = {
-                desc = "file explorer";
+                desc = "File Explorer";
             };
         }
 
         {
             mode = "n";
             key = "<leader>fe";
-            action = ''<cmd>lua snacks.explorer()<cr>'';
+            action = ''<CMD>lua Snacks.explorer()<CR>'';
             options = {
-                desc = "file explorer";
+                desc = "File Explorer";
             };
         }
     ];
