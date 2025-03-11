@@ -1,12 +1,16 @@
 { pkgs, ... }:
 {
-    imports = [];
+    imports = [
+        ./dotnet.nix
+        ./rust.nix
+    ];
 
     plugins.lsp = {
+        enable = true;
         lazyLoad = {
-            enable = true;
             settings = {
-                event = "VimEnter";
+                inlayHints = true;
+                ft = [ "*" ];
                 servers = {
                     bashls.enable = true;
                     clangd.enable = true;
@@ -22,4 +26,20 @@
         };
 
     };
+
+    plugins.lsp-format = {
+        enable = true;
+        lazyLoad.settings.ft = [ "*" ];
+    };
+
+    plugins.lsp-lines = {
+        enable = true;
+        lazyLoad.settings.ft = [ "*" ];
+    };
+
+    plugins.lsp-signature = {
+        enable = true;
+        lazyLoad.settings.ft = [ "*" ];
+    };
+
 }

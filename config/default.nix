@@ -3,7 +3,6 @@
         ./ai
         ./coding
         ./editor
-        ./lang
         ./lsp
         ./treesitter
         ./ui
