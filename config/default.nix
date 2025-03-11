@@ -3,10 +3,11 @@
         ./ai
         ./coding
         ./editor
-        ./lang
         ./lsp
         ./treesitter
         ./ui
+
+        ./snacks
 
         ./commands
     ];
