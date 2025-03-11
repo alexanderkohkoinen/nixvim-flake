@@ -36,10 +36,7 @@
     };
 
     outputs = { nixvim, flake-parts, ... }@inputs:
-        let
-            config = import ./config;
-        in
-            flake-parts.lib.mkFlake { inherit inputs; } {
+        flake-parts.lib.mkFlake { inherit inputs; } {
 
                 systems = [
                     "aarch64-darwin"
@@ -49,27 +46,7 @@
                 ];
 
                 imports = [
-                    ./flake/pkgs-by-name.nix
+                    ./flake
                 ];
-
-
-                perSystem = { pkgs, lib, system, ... }: let
-                    nixvimLib = nixvim.lib.${system};
-                    nixvim' = nixvim.legacyPackages."${system}";
-                    nvim = nixvim'.makeNixvim config;
-                in {
-                    checks = { 
-                        default = nixvimLib.check.mkTestDerivationFromNvim 
-                            { 
-                                inherit nvim; 
-                                name = "A nixvim configuration"; 
-                            };
-                    };
-
-                    packages = {
-                        inherit nvim;
-                        default = nvim;
-                    };
-                };
             };
 }

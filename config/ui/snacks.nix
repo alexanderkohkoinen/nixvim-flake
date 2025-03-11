@@ -1,3 +1,4 @@
+{ config, system, ... }:
 {
     plugins.fzf-lua.lazyLoad = {
         enable = true;
@@ -8,6 +9,7 @@
 
     plugins.snacks = {
         enable = true;
+        # package = self.packages.${system}.snacks-nvim;
         lazyLoad = {
             enable = true;
             settings = {
