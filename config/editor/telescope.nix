@@ -10,6 +10,10 @@
                 };
             };
 
+            fzf-native = {
+                enable = true;
+            };
+
         };
 
 
@@ -19,12 +23,19 @@
             enable = true;
             settings = {
                 cmd = [ "Telescope" "Noice telescope" ];
+
                 defaults = {
                     file_ignore_patterns = [
                         "^.git/"
                         "^output/"
                         "^target/"
                     ];
+                };
+
+                pickers = {
+                    colorscheme = {
+                        enable_preview = true;
+                    };
                 };
             };
         };
@@ -55,6 +66,19 @@
             action = "<cmd>lua require('telescope.builtin').diagnostics()<CR>";
             options.desc = "Find Diagnostics";
         }
+        {
+            mode = "n";
+            key = "<leader>vm";
+            action = "man_pages";
+            options.desc = "View man pages";
+        }
+        {
+            mode = "n";
+            key = "<leader>vr";
+            action = "registrers";
+            options.desc = "View view registrers";
+        }
+
         # {
         #     mode = "n";
         #     key = "<leader>tr";
