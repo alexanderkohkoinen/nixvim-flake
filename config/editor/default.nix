@@ -2,7 +2,7 @@
     imports = [
         ./grug.nix
         ./harpoon.nix
-        ./telescope.nix
+        ./snacks.nix
         ./which-key.nix
     ];
 }
