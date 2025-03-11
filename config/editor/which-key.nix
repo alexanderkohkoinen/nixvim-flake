@@ -16,14 +16,22 @@
 
             spec = [
                 # General Mappings
+                # {
+                #     __unkeyed-1 = "<leader>b";
+                #     group = "+buffer";
+                #     mode = [ "n" "v" ];
+                # }
                 {
                     __unkeyed-1 = "<leader>c";
-                    mode = [
-                        "n"
-                        "v"
-                    ];
+                    mode = [ "n" "v" ];
                     group = "+code";
                 }
+                # {
+                #     __unkeyed-1 = "<leader>d";
+                #     mode = [ "n" "v" ];
+                #     group = "+diagnostics";
+                # }
+
                 {
                     __unkeyed-1 = "<leader>f";
                     mode = "n";
@@ -32,10 +40,7 @@
 
                 {
                     __unkeyed-1 = "<leader>g";
-                    mode = [
-                        "n"
-                        "v"
-                    ];
+                    mode = [ "n" "v" ];
                     group = "+git";
                 }
 
@@ -50,7 +55,6 @@
                     mode = "n";
                     group = "+search";
                 }
-
                 {
                     __unkeyed-1 = "<leader>u";
                     mode = "n";
