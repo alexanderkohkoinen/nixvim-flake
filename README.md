@@ -1,24 +1,32 @@
-### Run flake during development
-nix run .#
+# Ale-nvim a nixvim based flake
 
+## Run flake during development
 
-### Add flake
+```bash
+nix run
+nix build
 ```
+
+## Add flake
+
+```nix
+{
     inputs = {
-      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";  # Or your preferred channel
-      alekohvim.url = "github:alexanderkohkoinen/nixvim-flake";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+        ale-nvim.url = "github:alexanderkohkoinen/nixvim-flake";
     };
 
     outputs = { self, nixpkgs, alekohvim }: {
-      # ... your other configuration ...
 
-      # Add to your system packages or devShell if you want to make it available system-wide
-      packages = with nixpkgs; [
-        alekohvim.packages.${system}.default
-      ];
+        # Add to your system packages or devShell
+        # if you want to make it available system-wide
+        packages = with nixpkgs; [
+            ale-nvim.packages.${system}.default
+        ];
 
-      # Or, use in a devShell:
-      devShells.default = nixpkgs.mkShell {
-        nativeBuildInputs = [ alekohvim.packages.${system}.default ];
-      };
+        # Or, use in a devShell:
+        devShells.default = nixpkgs.mkShell {
+            nativeBuildInputs = [ ale-nvim.packages.${system}.default ];
+        };
     };
+}
