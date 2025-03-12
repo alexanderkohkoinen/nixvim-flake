@@ -55,7 +55,6 @@
     keymaps = [
         {
             mode = [ "n" "v" ];
-            # action.__raw = "require('conform').format({ formatters = { 'injected' }, timeout_ms = 3000 })";
             action = "<CMD>lua require('conform').format()<CR>";
             key = "<leader>cF";
             options.desc = "Format injected language";
