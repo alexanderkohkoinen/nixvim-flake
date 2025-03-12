@@ -1,18 +1,7 @@
 {
-    plugins.snacks.lazyLoad = {
-        enable = true;
-
-        settings = {
-            event = "DeferredUIEnter";
-            bigfile = {
-                enabled = true;
-                notify = true;
-            };
-
-
-            gitbrowse.enabled = true;
-            lazygit.enabled = true;
-        };
+    plugins.snacks.lazyLoad.settings = {
+        gitbrowse.enabled = true;
+        lazygit.enabled = true;
     };
 
     keymaps = [

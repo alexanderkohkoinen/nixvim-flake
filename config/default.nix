@@ -25,17 +25,27 @@
 
         opts = {
             autowrite = true;
-            backup = true;
+						autoindent = true;
+
+						breakindent = true;
             clipboard = {
-                register.__raw = ''vim.env.SSH_TTY and "" or "unnamedplus"'';
+                # register.__raw = ''vim.env.SSH_TTY and "" or "unnamedplus"'';
+								register = "unamedplus";
             };
             completeopt = "menu,menuone,noselect";
             confirm = true;
             cursorline = true;
 
+						expandtab = true;
+
+
             foldlevel = 99;
 
+						ignorecase = true;
+						linebreak = true;
+
             mouse = "a";
+						mousemodel = "extend";
 
             relativenumber = true;
 
@@ -50,8 +60,12 @@
             splitbelow = true;
             splitkeep = "screen";
             splitright = true;
-
+						startofline = true;
+						showmatch = true;
+						synmaxcol = 240;
             swapfile = false;
+
+						preserveindent = true;
 
             tabstop = 2;
             termguicolors = true;
@@ -62,6 +76,7 @@
 
             virtualedit = "block";
             
+						writebackup = false;
             wildmode = "longest:full,full";
             wrap = false;
         };

@@ -2,6 +2,9 @@
 {
     imports = [
         ./explorer.nix
+        ./input.nix
+        ./git.nix
+        ./toggle.nix
     ];
 
     plugins.fzf-lua.lazyLoad = {
