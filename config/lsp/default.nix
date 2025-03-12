@@ -28,10 +28,10 @@
 
     };
 
-    plugins.lsp-format = {
-        enable = true;
-        lazyLoad.settings.ft = [ "*" ];
-    };
+    # plugins.lsp-format = {
+    #     enable = true;
+    #     lazyLoad.settings.ft = [ "*" ];
+    # };
 
     plugins.lsp-lines = {
         enable = true;
