@@ -12,13 +12,6 @@
         ];
 
         settings = {
-            window = {
-                layout = "float";
-                relative = "cursor";
-                width = 1;
-                height = 0.5;
-                row = 1;
-            };
         };
     };
 
@@ -69,7 +62,7 @@
             event = "BufEnter";
             pattern = "copilot-chat";
             callback.__raw = ''
-            function() 
+            function()
                 vim.opt_local.relativenumber = false
                 vim.opt_local.number = false
             end'';
