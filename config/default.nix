@@ -1,7 +1,8 @@
-{ 
+{
     imports = [
         ./ai
         ./coding
+        ./completion
         ./editor
         ./lsp
         ./treesitter
@@ -75,7 +76,7 @@
             updatetime = 200;
 
             virtualedit = "block";
-            
+
 						writebackup = false;
             wildmode = "longest:full,full";
             wrap = false;
