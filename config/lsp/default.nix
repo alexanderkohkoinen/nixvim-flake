@@ -35,10 +35,10 @@
 
   };
 
-  plugins.lsp-format = {
-    enable = true;
-    lazyLoad.settings.ft = [ "nix" ];
-  };
+  # plugins.lsp-format = {
+  #   enable = true;
+  #   lazyLoad.settings.ft = [ "nix" ];
+  # };
 
   plugins.lsp-lines = {
     enable = true;
