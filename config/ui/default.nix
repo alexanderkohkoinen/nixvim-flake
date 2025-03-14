@@ -1,6 +1,7 @@
 {
-    imports = [
-        ./mini.nix
-        ./styles.nix
-    ];
+  imports = [
+    ./mini.nix
+    ./noice.nix
+    ./styles.nix
+  ];
 }
