@@ -1,100 +1,98 @@
 {
-    imports = [
-        ./ai
-        ./coding
-        ./completion
-        ./editor
-        ./lsp
-        ./treesitter
-        ./ui
+  imports = [
+    ./ai
+    ./coding
+    ./completion
+    ./editor
+    ./lsp
+    ./treesitter
+    ./ui
 
-        ./snacks
+    ./snacks
 
-        ./commands
-    ];
+    ./commands
+  ];
 
-    config = {
-        globals = {
-            mapleader = " ";
-            maplocalleader = "\\";
-            autoformat = "true";
-            # root_lsp_ignore = [ "copilot" ];
+  config = {
+    globals = {
+      mapleader = " ";
+      maplocalleader = "\\";
+      autoformat = "true";
+      # root_lsp_ignore = [ "copilot" ];
 
-            deprecation_warnings = false;
-            trouble_lualine = true;
-        };
-
-        opts = {
-            autowrite = true;
-						autoindent = true;
-
-						breakindent = true;
-            clipboard = {
-                # register.__raw = ''vim.env.SSH_TTY and "" or "unnamedplus"'';
-								register = "unamedplus";
-            };
-            completeopt = "menu,menuone,noselect";
-            confirm = true;
-            cursorline = true;
-
-						expandtab = true;
-
-
-            foldlevel = 99;
-
-						ignorecase = true;
-						linebreak = true;
-
-            mouse = "a";
-						mousemodel = "extend";
-
-            relativenumber = true;
-
-            scrolloff = 4;
-            shiftround = true;
-            shiftwidth = 2;
-            showmode = false;
-            sidescrolloff = 8;
-            signcolumn = "yes";
-            smartcase = true;
-            smartindent = true;
-            splitbelow = true;
-            splitkeep = "screen";
-            splitright = true;
-						startofline = true;
-						showmatch = true;
-						synmaxcol = 240;
-            swapfile = false;
-
-						preserveindent = true;
-
-            tabstop = 2;
-            termguicolors = true;
-
-            undofile = true;
-            undolevels = 10000;
-            updatetime = 200;
-
-            virtualedit = "block";
-
-						writebackup = false;
-            wildmode = "longest:full,full";
-            wrap = false;
-        };
-
-        plugins = {
-            lz-n.enable = true;
-            mini.enable = true;
-        };
-
-  performance = {
-    byteCompileLua = {
-      enable = true;
-      nvimRuntime = true;
-      configs = true;
-      plugins = true;
+      deprecation_warnings = false;
+      trouble_lualine = true;
     };
+
+    opts = {
+      autowrite = true;
+      autoindent = true;
+
+      breakindent = true;
+      clipboard = {
+        register = "unamedplus";
+      };
+      completeopt = "menu,menuone,noselect";
+      confirm = true;
+      cursorline = true;
+
+      expandtab = true;
+
+      foldlevel = 99;
+
+      ignorecase = true;
+      linebreak = true;
+
+      mouse = "a";
+      mousemodel = "extend";
+
+      relativenumber = true;
+
+      scrolloff = 4;
+      shiftround = true;
+      shiftwidth = 2;
+      showmode = false;
+      sidescrolloff = 8;
+      signcolumn = "yes";
+      smartcase = true;
+      smartindent = true;
+      splitbelow = true;
+      splitkeep = "screen";
+      splitright = true;
+      startofline = true;
+      showmatch = true;
+      synmaxcol = 240;
+      swapfile = false;
+
+      preserveindent = true;
+
+      tabstop = 2;
+      termguicolors = true;
+
+      undofile = true;
+      undolevels = 10000;
+      updatetime = 200;
+
+      virtualedit = "block";
+
+      writebackup = false;
+      wildmode = "longest:full,full";
+      wrap = false;
+    };
+
+    plugins = {
+      lz-n.enable = true;
+      mini.enable = true;
+    };
+
+    performance = {
+      byteCompileLua = {
+        enable = true;
+        nvimRuntime = true;
+        configs = true;
+        plugins = true;
+      };
+    };
+
   };
-
-    };
 }
