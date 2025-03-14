@@ -1,13 +1,20 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 {
+  options = {
+    language.dotnet = lib.mkEnableOption "Enable dotnet language server";
+  };
+
+
+   config = lib.mkIf config.language.dotnet {
   extraPlugins = with pkgs.vimPlugins; [
     roslyn-nvim
     rzls-nvim
   ];
 
+
   extraConfigLua = # Lua
     ''
-      require('lz.n').load({
+require('lz.n').load({
         "seblyng/roslyn.nvim",
         ft = { "cs", "razor" },
         before = function()
@@ -53,9 +60,9 @@
               require('rzls').setup()
 
         end
-
-
       })
 
-    '';
+        '';
+    };
+
 }
