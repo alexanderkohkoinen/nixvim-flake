@@ -14,8 +14,9 @@
           vim.filetype.add { extension = { razor = 'razor', cshtml = 'razor', }, }
         end,
         after = function()
-                        
+
           require('roslyn').setup({
+          exe = "Microsoft.CodeAnalysis.LanguageServer",
           args = {
           '--stdio',
           '--logLevel=Information',
