@@ -16,21 +16,13 @@
         after = function()
 
           require('roslyn').setup({
-          exe = "Microsoft.CodeAnalysis.LanguageServer",
+          exe = vim.fs.joinpath("${pkgs.roslyn-ls}" --[[@as string]], 'bin', 'Microsoft.CodeAnalysis.LanguageServer'),
           args = {
           '--stdio',
           '--logLevel=Information',
           '--extensionLogDirectory=' .. vim.fs.dirname(vim.lsp.get_log_path()),
-          '--razorSourceGenerator='
-          .. vim.fs.joinpath(vim.fn.stdpath 'data' --[[@as string]], 'mason', 'packages', 'roslyn', 'libexec', 'Microsoft.CodeAnalysis.Razor.Compiler.dll'),
-          '--razorDesignTimePath=' .. vim.fs.joinpath(
-          vim.fn.stdpath 'data' --[[@as string]],
-          'packages',
-                'rzls',
-                'libexec',
-                'Targets',
-                'Microsoft.NET.Sdk.Razor.DesignTime.targets'
-              ),
+          '--razorSourceGenerator=' .. vim.fs.joinpath("${pkgs.roslyn-ls}", 'lib', 'roslyn-ls', 'Microsoft.CodeAnalysis.Razor.Compiler.dll'),
+          '--razorDesignTimePath=' .. vim.fs.joinpath("${pkgs.rzls}", 'lib', 'rzls', 'Targets', 'Microsoft.NET.Sdk.Razor.DesignTime.targets'),
             },
             ---@diagnostic disable-next-line: missing-fields
             config = {
@@ -58,7 +50,7 @@
             },
           })
 
-require('rzls').setup({ path = "${pkgs.rzls}/libexec" })
+              require('rzls').setup()
 
         end
 
