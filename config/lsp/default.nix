@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
     ./dotnet.nix
@@ -7,13 +7,9 @@
 
   plugins.lsp = {
     enable = true;
-    lazyLoad = {
-      settings = {
-        inlayHints = true;
-        ft = [ "*" ];
-      };
-    };
+    lazyLoad.settings.ft = [ "*" ];
 
+    inlayHints = true;
     servers = {
       bashls.enable = true;
       clangd.enable = true;
@@ -27,12 +23,59 @@
       nixd.enable = true;
       pylsp.enable = true;
       ruff.enable = true;
-      sqls.enable =true;
-      tailwindcss.enable =true;
+      sqls.enable = true;
+      tailwindcss.enable = true;
       ts_ls.enable = true;
       yamlls.enable = true;
     };
 
+    keymaps = {
+      silent = true;
+      extra = [
+        {
+          action.__raw = ''function() Snacks.picker.lsp_definitions() end'';
+          mode = "n";
+          key = "gd";
+          options = {
+            silent = true;
+            buffer = false;
+            # has = "definition";
+            desc = "Goto definition";
+          };
+        }
+        {
+          action.__raw = ''function() Snacks.picker.lsp_implementations() end'';
+          mode = "n";
+          key = "gI";
+          options = {
+            silent = true;
+            buffer = false;
+            desc = "Goto Implementations";
+          };
+        }
+        {
+          action.__raw = ''function() Snacks.picker.lsp_type_definitions() end'';
+          mode = "n";
+          key = "gy";
+          options = {
+            silent = true;
+            buffer = false;
+            desc = "Goto T[y]pe Definition";
+          };
+        }
+
+        {
+          action.__raw = ''function() Snacks.picker.lsp_references() end'';
+          mode = "n";
+          key = "gr";
+          options = {
+            silent = true;
+            buffer = false;
+            desc = "References";
+          };
+        }
+      ];
+    };
   };
 
   # plugins.lsp-format = {

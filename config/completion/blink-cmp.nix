@@ -19,8 +19,8 @@
       package = inputs.blink-cmp.packages.${system}.default;
       # plugin searches `start` instead of `opt` in pack
       lazyLoad.settings.event = [
-        "DeferredUIEnter"
         "CmdlineEnter"
+        "InsertEnter"
       ];
 
       settings = {
@@ -111,10 +111,10 @@
         sources = {
           default = [
             # BUILT-IN SOURCES
-            "buffer"
             "lsp"
             "path"
             "snippets"
+            "buffer"
             # Community
             "copilot"
             "dictionary"
