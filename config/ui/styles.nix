@@ -31,6 +31,7 @@
                             __unkeyed-12 = "dapui_console";
                             __unkeyed-13 = "dashboard";
                             __unkeyed-14 = "snacks_dashboard";
+                            __unkeyed-15 = "snacks_layout_box";
                             winbar = [
                                 "dap-repl"
                                 "neotest-summary"
