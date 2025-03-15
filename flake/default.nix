@@ -14,6 +14,7 @@
       };
 
       packages.default = config.packages.ale-nvim;
+      packages.nvim = config.packages.ale-nvim;
       devShells.default = config.packages.ale-nvim;
     };
 }
