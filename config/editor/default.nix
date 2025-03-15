@@ -1,8 +1,9 @@
 {
-    imports = [
-        ./grug.nix
-        ./harpoon.nix
-        ./markview.nix
-        ./which-key.nix
-    ];
+  imports = [
+    ./grug.nix
+    ./markview.nix
+    ./mini.nix
+    ./harpoon.nix
+    ./which-key.nix
+  ];
 }
