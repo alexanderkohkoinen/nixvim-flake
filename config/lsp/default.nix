@@ -74,6 +74,14 @@
             desc = "References";
           };
         }
+
+        {
+          mode = "n";
+          key = "<leader>ca";
+          action = ''<cmd>lua Snacks.picker.lsp_code_actions()<cr>'';
+          options.desc = "Code Action";
+        }
+
       ];
     };
   };
