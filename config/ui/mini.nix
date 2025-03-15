@@ -6,7 +6,22 @@
 
   plugins.mini.mockDevIcons = true;
 
-  plugins.mini.modules.animate = { };
+  plugins.mini.modules.animate = {
+    scroll = {
+      timing.__raw = ''require('mini.animate').gen_timing.linear({ duration = 150, unit = 'total' }) '';
+      subscroll.__raw = # Lua
+        ''
+          require('mini.animate').gen_subscroll.equal({
+              predicate = function(total_scroll)
+                if vim.g.mouse_scrolled then
+                  vim.g.mouse_scrolled = false
+                  return false
+                end
+                return total_scroll > 1
+              end,
+            })'';
+    };
+  };
 
   plugins.mini.modules.files = {
     windows = {
@@ -72,5 +87,16 @@
       };
     };
   };
+  extraConfigLua = ''
+    -- Detect mouse scroll events
+    local mouse_keys = { "Up", "Down" }
+    for _, scroll in ipairs(mouse_keys) do
+      local key = "<ScrollWheel" .. scroll .. ">"
+      vim.keymap.set({ "", "i" }, key, function()
+        vim.g.mouse_scrolled = true
+        return key
+      end, { expr = true })
+    end
+  '';
 
 }
