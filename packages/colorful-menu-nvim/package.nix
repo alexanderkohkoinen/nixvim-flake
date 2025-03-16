@@ -16,9 +16,9 @@ vimUtils.buildVimPlugin {
 
   dependencies = [ pkgs.vimPlugins.blink-cmp ];
 
-nvimSkipModule = [
+  nvimSkipModule = [
     "repro_blink"
     "repro_cmp"
-    ];
+  ];
 
 }

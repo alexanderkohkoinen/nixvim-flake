@@ -28,7 +28,7 @@
 
         notifier = {
           enabled = true;
-          top_down = false;
+          top_down = true;
         };
 
         statuscolumn = {
