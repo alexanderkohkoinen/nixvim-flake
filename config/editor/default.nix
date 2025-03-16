@@ -6,4 +6,6 @@
     ./harpoon.nix
     ./which-key.nix
   ];
+
+  plugins.numbertoggle.enable = true;
 }

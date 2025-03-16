@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   events = [
     "DeferredUIEnter"
@@ -20,21 +20,25 @@ in
       ];
 
       settings = {
-        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-          bash
-          json
-          lua
-          make
-          markdown
-          nix
-          regex
-          toml
-          vim
-          vimdoc
-          xml
-          yaml
-        ];
-
+        grammarPackages =
+          with pkgs.vimPlugins.nvim-treesitter.builtGrammars;
+          [
+            bash
+            json
+            lua
+            make
+            markdown
+            nix
+            regex
+            toml
+            vim
+            vimdoc
+            xml
+            yaml
+          ]
+          ++ lib.optionals pkgs.stdenv.isDarwin [
+            swift
+          ];
       };
     };
 
