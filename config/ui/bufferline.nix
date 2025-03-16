@@ -63,7 +63,7 @@
     {
       mode = "n";
       action = "<CMD>BufferLineCycleNext<CR>";
-      key = "<S-h>";
+      key = "<S-l>";
       options.desc = "Prev Buffer";
     }
     {
