@@ -3,6 +3,7 @@
     ./ai
     ./coding
     ./completion
+    ./dap
     ./editor
     ./lsp
     ./treesitter
