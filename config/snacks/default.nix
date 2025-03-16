@@ -2,6 +2,7 @@
 {
   imports = [
     ./explorer.nix
+    ./dashboard.nix
     ./input.nix
     ./git.nix
     ./toggle.nix
@@ -77,7 +78,7 @@
       mode = "n";
       key = "<leader>un";
       action.__raw = # lua
-        '' function() Snacks.notifier.hide() end'';
+        ''function() Snacks.notifier.hide() end'';
       options.desc = "Dismiss all Notifications";
     }
     {
@@ -270,7 +271,7 @@
     }
     {
       mode = "n";
-      key = "<leader>fmp";
+      key = "<leader>fl";
       action = ''<cmd>lua Snacks.picker.man()<cr>'';
       options = {
         desc = "Find man pages";
@@ -316,7 +317,7 @@
     #     desc = "Find git stashes";
     #   };
     # }
-        {
+    {
       mode = "n";
       key = "<leader>fe";
       action = ''<cmd>lua Snacks.explorer.open() cr>'';
