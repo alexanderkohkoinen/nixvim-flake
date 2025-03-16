@@ -3,6 +3,7 @@
   imports = [
     ./dotnet.nix
     ./rust.nix
+    ./xcodebuild.nix
   ];
 
   plugins.lsp = {

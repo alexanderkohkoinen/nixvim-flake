@@ -4,13 +4,13 @@
 }:
 vimUtils.buildVimPlugin {
   pname = "xcodebuild-nvim";
-  version = "2025-03-16";
+  version = "6.1.0";
   src = pkgs.fetchFromGitHub {
     version = "6.1.0";
-    owner = "wojciech-kulik/";
+    owner = "wojciech-kulik";
     repo = "xcodebuild.nvim";
     rev = "v6.1.0";
-    sha256 = "NJQGmM0ZjRA/IumbCKJVvDeAfJ/mext4uYRdIgcEaqE=";
+    sha256 = "1nam56lzmpv4mnakqnyb4bhzx8vg66mzacd0nhd2y91svb9zkdbn";
   };
   meta.homepage = "https://github.com/wojciech-kulik/xcodebuild.nvim/";
 
