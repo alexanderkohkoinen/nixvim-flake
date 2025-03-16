@@ -1,9 +1,10 @@
 {
   imports = [
     ./grug.nix
+    ./harpoon.nix
     ./markview.nix
     ./mini.nix
-    ./harpoon.nix
+    ./oil.nix
     ./which-key.nix
   ];
 
