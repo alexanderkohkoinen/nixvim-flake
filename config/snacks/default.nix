@@ -1,4 +1,8 @@
-{ ... }:
+{
+  self,
+  system,
+  ...
+}:
 {
   imports = [
     ./explorer.nix
@@ -6,6 +10,7 @@
     ./input.nix
     ./git.nix
     ./toggle.nix
+    ./notifier.nix
   ];
 
   plugins.fzf-lua.lazyLoad = {
@@ -17,41 +22,35 @@
 
   plugins.snacks = {
     enable = true;
-    # package = self.packages.${system}.snacks-nvim;
-    lazyLoad = {
-      enable = true;
-      settings = {
-        event = "DeferredUIEnter";
+    #package = self.packages.${system}.snacks-nvim;
+    #lazyLoad.enable = true;
+    #lazyLoad.settings.event = "DeferredUIEnter";
+    settings = {
 
-        indent.enabled = true;
-        scroll.enabled = true;
+      indent.enabled = true;
+      scroll.enabled = true;
 
-        notifier = {
-          enabled = true;
-          top_down = true;
+      statuscolumn = {
+        enabled = true;
+        folds = {
+          open = true;
+          git_hl = true;
         };
+      };
 
-        statuscolumn = {
-          enabled = true;
-          folds = {
-            open = true;
-            git_hl = true;
-          };
-        };
+      bigfile = {
+        enabled = true;
+        notify = true;
+      };
 
-        bigfile = {
-          enabled = true;
-          notify = true;
-        };
-
-        picker = {
-          layouts = {
-            select = {
-              relative = "cursor";
-              width = 70;
-              min_width = 0;
-              row = 1;
-            };
+      picker = {
+        enabled = true;
+        layouts = {
+          select = {
+            relative = "cursor";
+            width = 70;
+            min_width = 0;
+            row = 1;
           };
         };
       };
@@ -59,28 +58,6 @@
   };
 
   keymaps = [
-    {
-      mode = "n";
-      key = "<leader>n";
-      action.__raw = # lua
-        ''
-          function()
-            if Snacks.config.picker and Snacks.config.picker.enabled then
-              Snacks.picker.notifications()
-            else
-              Snacks.notifier.show_history()
-            end
-          end
-        '';
-      options.desc = "Notification History";
-    }
-    {
-      mode = "n";
-      key = "<leader>un";
-      action.__raw = # lua
-        ''function() Snacks.notifier.hide() end'';
-      options.desc = "Dismiss all Notifications";
-    }
     {
       mode = "n";
       key = "<leader>fa";

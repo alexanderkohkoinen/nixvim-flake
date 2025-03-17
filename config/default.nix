@@ -19,7 +19,7 @@
     globals = {
       mapleader = " ";
       maplocalleader = "\\";
-      autoformat = "false";
+      autoformat = false;
       # root_lsp_ignore = [ "copilot" ];
 
       deprecation_warnings = false;

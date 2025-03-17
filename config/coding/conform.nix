@@ -12,26 +12,40 @@
     '';
 
     settings = {
-      format_on_save = # Lua
-          ''
-            function(bufnr)
-              if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-                return
-              end
-
-              if slow_format_filetypes[vim.bo[bufnr].filetype] then
-                return
-              end
-
-              local function on_format(err)
-                if err and err:match("timeout$") then
-                  slow_format_filetypes[vim.bo[bufnr].filetype] = true
-                end
-              end
-
-              return { timeout_ms = 200, lsp_fallback = true }, on_format
-             end
-          '';
+      # format_on_save = # Lua
+      #   ''
+      #     function(bufnr)
+      #       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+      #         return
+      #       end
+      #
+      #
+      #       vim.notify("Global: " .. vim.inspect(vim.g.disable_autoformat) .. " Local: " .. vim.inspect(vim.b[bufnr].disable_autoformat), "debug", {
+      #         title = "Conform",
+      #         id = "autoformat"
+      #       })
+      #
+      #
+      #       if slow_format_filetypes[vim.bo[bufnr].filetype] then
+      #          return
+      #        end
+      #
+      #
+      #       local function on_format(err)
+      #         if err and err:match("timeout$") then
+      #           slow_format_filetypes[vim.bo[bufnr].filetype] = true
+      #         end
+      #       end
+      #
+      #
+      #       vim.notify("Auto format on save", "debug", {
+      #         title = "Conform",
+      #         id = "auto-format-notify"
+      #       })
+      #
+      #       return { timeout_ms = 200, lsp_fallback = true }, on_format
+      #      end
+      #   '';
       default_format_opts = {
         lsp_format = "fallback";
       };
@@ -44,7 +58,7 @@
         ];
         json = [ "jq" ];
         lua = [ "stylua" ];
-        markdown = [ "deno_fmt" ];
+        markdoewn = [ "deno_fmt" ];
         nix = [ "nixfmt" ];
         fish = [ "fish_indent" ];
 
@@ -85,11 +99,6 @@
   ];
 
   autoCmd = [
-    # Remove trailing whitespace on save
-    {
-      event = "BufWrite";
-      command = "%s/\\s\\+$//e";
-    }
   ];
 
 }

@@ -52,5 +52,21 @@
         '';
     }
 
+    # Autoformat
+    {
+      desc = "Activate auto format";
+      event = "FileType";
+      pattern = [
+        "nix"
+        "lua"
+      ];
+      callback.__raw = # Lua
+        ''
+          function()
+            vim.b.autoformat = true;
+          end
+        '';
+    }
+
   ];
 }

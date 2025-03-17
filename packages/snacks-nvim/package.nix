@@ -30,10 +30,10 @@ vimUtils.buildVimPlugin {
     "snacks.words"
     "snacks.picker.core.list"
     "snacks.toggle"
-    # "snacks.image"
-    # "snacks.image.init"
-    # "snacks.image.placement"
-    # "snacks.image.image"
-    # "snacks.image.convert"
+    "snacks.image"
+    "snacks.image.init"
+    "snacks.image.placement"
+    "snacks.image.image"
+    "snacks.image.convert"
   ];
 }
