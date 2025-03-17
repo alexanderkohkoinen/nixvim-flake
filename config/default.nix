@@ -32,7 +32,11 @@
 
       breakindent = true;
       clipboard = {
-        register = "unamedplus";
+        register = "unnamedplus";
+        providers = {
+          wl-copy.enable = true;
+          xclip.enable = true;
+        };
       };
       completeopt = "menu,menuone,noselect";
       confirm = true;
