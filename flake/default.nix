@@ -13,8 +13,8 @@
         config.allowUnfree = true;
       };
 
-      packages.default = config.packages.ale-nvim;
-      packages.nvim = config.packages.ale-nvim;
-      devShells.default = config.packages.ale-nvim;
+      packages.default = config.packages.kokovim;
+      packages.nvim = config.packages.kokovim;
+      devShells.default = config.packages.kokovim;
     };
 }
