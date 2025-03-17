@@ -16,6 +16,14 @@
     colorful-menu-nvim
   ];
 
+  plugins.blink-cmp-dictionary.enable = true;
+  plugins.blink-cmp-git.enable = true;
+  plugins.blink-cmp-spell.enable = true;
+  plugins.blink-copilot.enable = true;
+  plugins.blink-ripgrep.enable = true;
+  plugins.blink-emoji.enable = true;
+  plugins.blink-compat.enable = true;
+
   plugins = {
     blink-cmp = {
       enable = true;
@@ -131,7 +139,7 @@
             "dictionary"
             "emoji"
             "git"
-            # "nerdfont"
+            "nerdfont"
             "spell"
           ];
           providers = {
@@ -199,10 +207,4 @@
     };
   };
 
-  plugins.blink-cmp-dictionary.enable = true;
-  plugins.blink-cmp-git.enable = true;
-  plugins.blink-cmp-spell.enable = true;
-  plugins.blink-copilot.enable = true;
-  plugins.blink-emoji.enable = true;
-  plugins.blink-compat.enable = true;
 }
