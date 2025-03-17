@@ -5,6 +5,7 @@
 ```bash
 nix run
 nix build
+nix develop -c fish
 ```
 
 ## Add flake

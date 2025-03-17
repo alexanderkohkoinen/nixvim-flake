@@ -79,8 +79,14 @@
         {
           mode = "n";
           key = "<leader>ca";
-          action = ''<cmd>lua Snacks.picker.lsp_code_actions()<cr>'';
+          action = "vim.lsp.buf.code_action";
           options.desc = "Code Action";
+        }
+        {
+          mode = "n";
+          key = "<leader>cr";
+          action = "<CMD>vim.lsp.buf.rename";
+          options.desc = "Rename";
         }
 
       ];

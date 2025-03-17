@@ -14,6 +14,7 @@
       coreutils
       lldb
       netcoredbg
+      vscode-js-debug
     ]
     ++ lib.optionals pkgs.stdenv.isLinux [
       gdb
@@ -111,6 +112,11 @@
             command = lib.getExe pkgs.netcoredbg;
             args = [ "--interpreter=vscode" ];
           };
+
+          node2 = {
+            command = "node";
+            args = [ "--interpreter=vscode" ];
+          };
         };
 
         servers = {
@@ -124,6 +130,15 @@
               ];
             };
           };
+
+          pwa-node = {
+            host = "localhost";
+            port = 8123;
+            executable = {
+              command = "${pkgs.vscode-js-debug}/bin/js-debug";
+            };
+          };
+
         };
       };
 
@@ -179,6 +194,26 @@
           };
 
           netcoredb-config = coreclr-config;
+
+          js-cfg = {
+            inherit program;
+            name = "Launch (PWA)";
+            type = "pwa-node";
+            request = "launch";
+            cwd = ''''${workspaceFolder}'';
+          };
+
+          node-cfg = {
+            name = "Launch (node.js)";
+            program = ''''${file}'';
+            type = "node2";
+            request = "launch";
+            cwd = ''''${workspaceFolder}'';
+            sourceMaps = true;
+            protocol = "inspector";
+            console = "integratedTerminal";
+          };
+
         in
         {
           c =
@@ -236,6 +271,17 @@
               args = { };
               env = { };
               terminalKind = "integrated";
+            }
+          ];
+
+          javascript = [
+            js-cfg
+            node-cfg
+            {
+              name = "Attach to node.js";
+              type = "node2";
+              request = "attach";
+              processId.__raw = ''require("dap.utils").pick_process '';
             }
           ];
         };
