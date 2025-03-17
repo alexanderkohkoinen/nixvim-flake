@@ -17,7 +17,7 @@
     { system, ... }:
     {
       nixvimConfigurations = {
-        ale-nvim = inputs.nixvim.lib.evalNixvim {
+        kokovim = inputs.nixvim.lib.evalNixvim {
           inherit system;
 
           extraSpecialArgs = {

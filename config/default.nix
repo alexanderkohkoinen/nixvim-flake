@@ -12,6 +12,7 @@
     ./snacks
 
     ./commands
+    ./keymaps.nix
   ];
 
   config = {
