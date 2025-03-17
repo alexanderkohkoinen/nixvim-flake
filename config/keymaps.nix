@@ -1,6 +1,5 @@
 {
   keymaps = [
-
     # Tabs
     {
       mode = "n";
