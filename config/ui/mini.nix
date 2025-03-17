@@ -8,6 +8,7 @@
 
   plugins.mini.modules.animate = {
     scroll = {
+      enable = true;
       timing.__raw = ''require('mini.animate').gen_timing.linear({ duration = 150, unit = 'total' }) '';
       subscroll.__raw = # Lua
         ''

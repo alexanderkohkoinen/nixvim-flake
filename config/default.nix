@@ -16,6 +16,14 @@
   ];
 
   config = {
+    clipboard = {
+      register = "unnamedplus";
+      providers = {
+        wl-copy.enable = true;
+        xclip.enable = true;
+      };
+    };
+
     globals = {
       mapleader = " ";
       maplocalleader = "\\";
@@ -31,26 +39,25 @@
       autoindent = true;
 
       breakindent = true;
-      clipboard = {
-        register = "unnamedplus";
-        providers = {
-          wl-copy.enable = true;
-          xclip.enable = true;
-        };
-      };
+
       completeopt = "menu,menuone,noselect";
       confirm = true;
       cursorline = true;
+      copyindent = true;
 
       expandtab = true;
 
       foldlevel = 99;
 
+      incsearch = true;
       ignorecase = true;
+
       linebreak = true;
 
       mouse = "a";
       mousemodel = "extend";
+      modeline = true;
+      modelines = 100;
 
       relativenumber = true;
 
@@ -77,7 +84,7 @@
 
       undofile = true;
       undolevels = 10000;
-      updatetime = 200;
+      updatetime = 100;
 
       virtualedit = "block";
 
