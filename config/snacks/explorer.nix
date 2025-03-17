@@ -1,5 +1,5 @@
 {
-  plugins.snacks.lazyLoad = {
+  plugins.snacks = {
     settings = {
       explorer.enabled = true;
     };

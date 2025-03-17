@@ -23,36 +23,34 @@
   plugins.snacks = {
     enable = true;
     #package = self.packages.${system}.snacks-nvim;
-    lazyLoad = {
-      enable = true;
-      settings = {
-        event = "DeferredUIEnter";
+    #lazyLoad.enable = true;
+    #lazyLoad.settings.event = "DeferredUIEnter";
+    settings = {
 
-        indent.enabled = true;
-        scroll.enabled = true;
+      indent.enabled = true;
+      scroll.enabled = true;
 
-        statuscolumn = {
-          enabled = true;
-          folds = {
-            open = true;
-            git_hl = true;
-          };
+      statuscolumn = {
+        enabled = true;
+        folds = {
+          open = true;
+          git_hl = true;
         };
+      };
 
-        bigfile = {
-          enabled = true;
-          notify = true;
-        };
+      bigfile = {
+        enabled = true;
+        notify = true;
+      };
 
-        picker = {
-          enabled = true;
-          layouts = {
-            select = {
-              relative = "cursor";
-              width = 70;
-              min_width = 0;
-              row = 1;
-            };
+      picker = {
+        enabled = true;
+        layouts = {
+          select = {
+            relative = "cursor";
+            width = 70;
+            min_width = 0;
+            row = 1;
           };
         };
       };
