@@ -13,25 +13,31 @@
 
     settings = {
       format_on_save = # Lua
-          ''
-            function(bufnr)
-              if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-                return
-              end
+        ''
+          function(bufnr)
+            if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+              return
+            end
 
-              if slow_format_filetypes[vim.bo[bufnr].filetype] then
-                return
-              end
-
-              local function on_format(err)
-                if err and err:match("timeout$") then
-                  slow_format_filetypes[vim.bo[bufnr].filetype] = true
-                end
-              end
-
-              return { timeout_ms = 200, lsp_fallback = true }, on_format
+            if slow_format_filetypes[vim.bo[bufnr].filetype] then
+               return
              end
-          '';
+
+
+            local function on_format(err)
+              if err and err:match("timeout$") then
+                slow_format_filetypes[vim.bo[bufnr].filetype] = true
+              end
+            end
+
+            Snacks.notifier.notify("Auto format on save", "debug", {
+              title = "Conform",
+              id = "auto-format-notify"
+            })
+
+            return { timeout_ms = 200, lsp_fallback = true }, on_format
+           end
+        '';
       default_format_opts = {
         lsp_format = "fallback";
       };
@@ -44,7 +50,7 @@
         ];
         json = [ "jq" ];
         lua = [ "stylua" ];
-        markdown = [ "deno_fmt" ];
+        markdoewn = [ "deno_fmt" ];
         nix = [ "nixfmt" ];
         fish = [ "fish_indent" ];
 

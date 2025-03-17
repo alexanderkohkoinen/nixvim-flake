@@ -1,4 +1,8 @@
-{ ... }:
+{
+  self,
+  system,
+  ...
+}:
 {
   imports = [
     ./explorer.nix
@@ -17,7 +21,7 @@
 
   plugins.snacks = {
     enable = true;
-    # package = self.packages.${system}.snacks-nvim;
+    #package = self.packages.${system}.snacks-nvim;
     lazyLoad = {
       enable = true;
       settings = {
@@ -29,6 +33,7 @@
         notifier = {
           enabled = true;
           top_down = true;
+          style = "minimal";
         };
 
         statuscolumn = {
