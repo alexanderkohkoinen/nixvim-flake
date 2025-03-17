@@ -31,9 +31,9 @@
       autoindent = true;
 
       breakindent = true;
-      clipboard = {
-        register = "unamedplus";
-      };
+      # clipboard = {
+      #   register = "unamedplus";
+      # };
       completeopt = "menu,menuone,noselect";
       confirm = true;
       cursorline = true;
@@ -95,6 +95,5 @@
         plugins = true;
       };
     };
-
   };
 }
