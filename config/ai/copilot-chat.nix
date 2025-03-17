@@ -11,8 +11,7 @@
             "CopilotChatToggle"
         ];
 
-        settings = {
-        };
+        settings = {};
     };
 
     plugins.which-key.settings.spec = [

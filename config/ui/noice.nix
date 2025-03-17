@@ -4,7 +4,12 @@
       enable = true;
 
       lazyLoad.settings.event = "DeferredUIEnter";
-
+      # lazyLoad.settings.before.__raw = # Lua
+      #   ''
+      #     function()
+      #       require('lz.n').trigger_load('snacks')
+      #     end
+      #   '';
       settings = {
         # Hides the title above noice boxes
         cmdline = {
@@ -63,6 +68,8 @@
           view_error = "mini";
           view_warn = "mini";
         };
+
+        notify.__raw = ''require("snacks").notifier '';
 
         lsp = {
           override = {
@@ -138,11 +145,6 @@
           };
         };
       };
-    };
-
-    notify = {
-      enable = true;
-      lazyLoad.settings.event = "DeferredUIEnter";
     };
   };
 }

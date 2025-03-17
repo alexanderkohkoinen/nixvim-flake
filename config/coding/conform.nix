@@ -30,7 +30,8 @@
               end
             end
 
-            Snacks.notifier.notify("Auto format on save", "debug", {
+
+            vim.notify("Auto format on save", "debug", {
               title = "Conform",
               id = "auto-format-notify"
             })
@@ -91,11 +92,6 @@
   ];
 
   autoCmd = [
-    # Remove trailing whitespace on save
-    {
-      event = "BufWrite";
-      command = "%s/\\s\\+$//e";
-    }
   ];
 
 }
