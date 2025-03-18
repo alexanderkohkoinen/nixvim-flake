@@ -7,6 +7,9 @@
   plugins.mini.mockDevIcons = true;
 
   plugins.mini.modules.animate = {
+    resize = {
+      timing.__raw = ''require('mini.animate').gen_timing.linear({ duration = 50, unit = 'total' }) '';
+    };
     scroll = {
       enable = true;
       timing.__raw = ''require('mini.animate').gen_timing.linear({ duration = 150, unit = 'total' }) '';
