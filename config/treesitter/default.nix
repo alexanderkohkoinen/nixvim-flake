@@ -11,38 +11,35 @@ in
     folding = true;
 
     lazyLoad = {
-      enable = true;
       settings.event = events;
       settings.cmd = [
         "TSUpdateSync"
         "TSUpdate"
         "TSInstall"
       ];
-
-      settings = {
-        grammarPackages =
-          with pkgs.vimPlugins.nvim-treesitter.builtGrammars;
-          [
-            bash
-            json
-            lua
-            make
-            markdown
-            nix
-            regex
-            toml
-            vim
-            vimdoc
-            xml
-            yaml
-          ]
-          ++ lib.optionals pkgs.stdenv.isDarwin [
-            swift
-          ];
-      };
     };
 
     settings = {
+      grammarPackages =
+        with pkgs.vimPlugins.nvim-treesitter.builtGrammars;
+        [
+         bash
+          json
+          lua
+          make
+          markdown
+          nix
+          regex
+          toml
+          vim
+          vimdoc
+          xml
+          yaml
+        ]
+        ++ lib.optionals pkgs.stdenv.isDarwin [
+          swift
+        ];
+
       highlight = {
         additional_vim_regex_highligtning = true;
         enable = true;
@@ -69,13 +66,15 @@ in
 
   };
 
-  plugins.treesitter-context.lazyLoad = {
+  plugins.treesitter-context = {
+    enable = true;
+    lazyLoad.settings.event = events;
+
     settings = {
-      event = events;
-      max_lines = 4;
       min_window_height = 40;
       multiwindow = true;
       separator = "-";
+      max_lines = 4;
     };
   };
 
