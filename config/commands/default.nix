@@ -2,6 +2,7 @@
   imports = [
     ./editor.nix
     ./lsp.nix
+    ./mini.nix
   ];
 
   autoCmd = [

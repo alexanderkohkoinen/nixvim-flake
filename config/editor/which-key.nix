@@ -18,63 +18,65 @@
       };
 
       spec = [
-
         # General Mappings
-        # {
-        #     __unkeyed-1 = "<leader>b";
-        #     group = "+buffer";
-        #     mode = [ "n" "v" ];
-        # }
+        {
+          __unkeyed-1 = "<leader>b";
+          group = "+buffer";
+          mode = [
+            "n"
+            "v"
+          ];
+        }
         {
           __unkeyed-1 = "<leader>c";
+          group = "+code";
           mode = [
             "n"
             "v"
           ];
-          group = "+code";
         }
-        # {
-        #     __unkeyed-1 = "<leader>d";
-        #     mode = [ "n" "v" ];
-        #     group = "+diagnostics";
-        # }
-
         {
           __unkeyed-1 = "<leader>f";
-          mode = "n";
           group = "+find/file";
+          mode = "n";
         }
-
         {
           __unkeyed-1 = "<leader>g";
+          group = "+git";
           mode = [
             "n"
             "v"
           ];
-          group = "+git";
+        }
+        {
+          __unkeyed-1 = "<leader>h";
+          group = "+harpoon";
+          mode = [
+            "n"
+            "v"
+          ];
         }
 
         {
           __unkeyed-1 = "<leader>q";
-          mode = "n";
           group = "+quit/session";
+          mode = "n";
         }
 
         {
           __unkeyed-1 = "<leader>s";
-          mode = "n";
           group = "+search";
+          mode = "n";
         }
         {
           __unkeyed-1 = "<leader>u";
-          mode = "n";
           group = "+ui";
+          mode = "n";
         }
-
         {
           __unkeyed-1 = "<leader>w";
-          mode = "n";
           group = "+windows";
+          mode = "n";
         }
       ];
     };
