@@ -1,5 +1,6 @@
 {
   imports = [
+    ./git.nix
     ./grug.nix
     ./harpoon.nix
     ./markview.nix
