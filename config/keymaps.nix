@@ -3,6 +3,14 @@
     # Tabs
     {
       mode = "n";
+      action = "<CMD>tabonly<CR>";
+      key = "<leader><tab>o";
+      options.desc = "Close Other tabs";
+    }
+
+    # Tabs
+    {
+      mode = "n";
       action = "<CMD>tablast<CR>";
       key = "<leader><tab>l";
       options.desc = "Last tab";
