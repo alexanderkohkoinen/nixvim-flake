@@ -64,13 +64,19 @@
             __raw = ''
               function()
                 local in_git = Snacks.git.get_root() ~= nil
+                local is_github_repo = vim.fn.systemlist("git remote get-url origin")[1]:match("github.com")
+
                 local cmds = {
                   {
                     title = "Open Issues",
                     cmd = "gh issue list -L 3",
                     key = "i",
                     action = function()
-                      vim.fn.jobstart("gh issue list --web", { detach = true })
+                      if (is_github_repo) then
+                        vim.fn.jobstart("gh issue list --web", { detach = true })
+                      else
+                        print("This is not a Github repo")
+                      end
                     end,
                     icon = " ",
                     height = 3,
@@ -82,7 +88,11 @@
                     cmd = "gh pr list -L 3",
                     key = "p",
                     action = function()
-                      vim.fn.jobstart("gh pr list --web", { detach = true })
+                      if (is_github_repo) then
+                        vim.fn.jobstart("gh pr list --web", { detach = true })
+                      else
+                        print("This is not a Github repo")
+                      end
                     end,
                     height = 3,
                     indent = 1,
