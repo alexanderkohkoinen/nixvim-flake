@@ -83,16 +83,9 @@
           }
           {
             __unkeyed-1.__raw = ''
-              function()
-                local icon = " "
-                local status = require("copilot.api").status.data
-                return icon .. (status.message or " ")
-              end,
-
-              cond = function()
-               local ok, clients = pcall(vim.lsp.get_clients, { name = "copilot", bufnr = 0 })
-               return ok and #clients > 0
-              end,
+              require("noice").api.statusline.mode.get,
+              cond = require("noice").api.statusline.mode.has,
+              color = { fg = "#eb6f92" },
             '';
           }
         ];
