@@ -69,7 +69,7 @@
                 local cmds = {
                   {
                     title = "Open Issues",
-                    cmd = "gh issue list -L 3",
+                    cmd = "string match -q '*github.com*' (git remote get-url origin 2>/dev/null) &&  gh issue list -L 3",
                     key = "i",
                     action = function()
                       if (is_github_repo) then
@@ -79,13 +79,13 @@
                       end
                     end,
                     icon = " ",
-                    height = 3,
+                    height = 5,
                     indent = 1,
                   },
                   {
                     icon = " ",
                     title = "Open PRs",
-                    cmd = "gh pr list -L 3",
+                    cmd = "string match -q '*github.com*' (git remote get-url origin 2>/dev/null) && gh pr list -L 3",
                     key = "p",
                     action = function()
                       if (is_github_repo) then
@@ -94,7 +94,7 @@
                         print("This is not a Github repo")
                       end
                     end,
-                    height = 3,
+                    height = 5,
                     indent = 1,
                   },
                   {
