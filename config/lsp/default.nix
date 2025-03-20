@@ -1,6 +1,6 @@
-{ ... }:
 {
   imports = [
+    ./ale.nix
     ./dotnet.nix
     ./rust.nix
     ./xcodebuild.nix

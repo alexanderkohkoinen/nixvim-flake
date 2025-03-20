@@ -23,7 +23,7 @@ in
       grammarPackages =
         with pkgs.vimPlugins.nvim-treesitter.builtGrammars;
         [
-         bash
+          bash
           json
           lua
           make
