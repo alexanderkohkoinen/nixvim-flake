@@ -34,8 +34,19 @@
       silent = true;
       extra = [
         {
-          action.__raw = ''function() Snacks.picker.lsp_definitions() end'';
-          mode = "n";
+          action.__raw = ''vim.lsp.buf.format'';
+          mode = "v";
+          key = "<leader>cf";
+          options = {
+            silent = true;
+            buffer = false;
+            desc = "Format selection";
+          };
+        }
+        {
+          # action.__raw = ''function() Snacks.picker.lsp_definitions() end'';
+          action.__raw = "vim.lsp.buf.definition";
+          mode = "";
           key = "gd";
           options = {
             silent = true;
@@ -45,9 +56,10 @@
           };
         }
         {
-          action.__raw = ''function() Snacks.picker.lsp_implementations() end'';
+          # action.__raw = ''function() Snacks.picker.lsp_implementations() end'';
+          action.__raw = "vim.lsp.buf.implementation";
           mode = "n";
-          key = "gI";
+          key = "gi";
           options = {
             silent = true;
             buffer = false;
@@ -55,7 +67,8 @@
           };
         }
         {
-          action.__raw = ''function() Snacks.picker.lsp_type_definitions() end'';
+          # action.__raw = ''function() Snacks.picker.lsp_type_definitions() end'';
+          action.__raw = "vim.lsp.buf.type_definition";
           mode = "n";
           key = "gy";
           options = {
@@ -66,7 +79,9 @@
         }
 
         {
-          action.__raw = ''function() Snacks.picker.lsp_references() end'';
+
+          # action.__raw = ''function() Snacks.picker.lsp_references() end'';
+          action.__raw = "vim.lsp.buf.references";
           mode = "n";
           key = "gr";
           options = {
@@ -76,11 +91,46 @@
           };
         }
 
+        # Code
+
         {
+
+          # action = ''<cmd>lua Snacks.picker.lsp_code_actions()<cr>'';
+          action.__raw = "vim.lsp.buf.code_action";
           mode = "n";
-          key = "<leader>ca";
-          action = ''<cmd>lua Snacks.picker.lsp_code_actions()<cr>'';
           options.desc = "Code Action";
+          key = "<leader>ca";
+        }
+        {
+          action.__raw = ''function() return vim.lsp.buf.hover() end '';
+          mode = "n";
+          options.desc = "Hover";
+          key = "K";
+        }
+        {
+          action.__raw = ''function() return vim.lsp.buf.signature_help() end '';
+          mode = "n";
+          options.desc = "Signature help";
+          key = "<leader>gK";
+        }
+
+        {
+          mode = "i";
+          action.__raw = ''function() return vim.lsp.buf.signature_help() end '';
+          options.desc = "Signature help";
+          key = "<C-k>";
+        }
+        {
+          action.__raw = "vim.lsp.buf.rename";
+          mode = "n";
+          key = "<leader>cr";
+          options.desc = "Rename";
+        }
+        {
+          action.__raw = ''function() Snacks.rename.rename_file() end'';
+          mode = "n";
+          key = "<leader>cR";
+          options.desc = "Rename File";
         }
 
       ];

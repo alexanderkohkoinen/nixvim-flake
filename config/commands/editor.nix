@@ -20,6 +20,7 @@
         "spectre_panel"
         "startuptime"
         "tsplayground"
+        "oil"
       ];
       callback.__raw = # Lua
         ''
