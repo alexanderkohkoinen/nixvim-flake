@@ -18,10 +18,6 @@
   config = {
     clipboard = {
       register = "unnamedplus";
-      providers = {
-        wl-copy.enable = true;
-        xclip.enable = true;
-      };
     };
 
     globals = {
@@ -59,6 +55,7 @@
       modeline = true;
       modelines = 100;
 
+      number = true;
       relativenumber = true;
 
       scrolloff = 4;

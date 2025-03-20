@@ -45,6 +45,7 @@
 
       picker = {
         enabled = true;
+        ui_select = true;
         layouts = {
           select = {
             relative = "cursor";

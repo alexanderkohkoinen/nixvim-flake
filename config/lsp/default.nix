@@ -1,6 +1,6 @@
-{ ... }:
 {
   imports = [
+    # ./ale.nix
     ./dotnet.nix
     ./rust.nix
     ./xcodebuild.nix
@@ -35,7 +35,7 @@
       extra = [
         {
           action.__raw = ''vim.lsp.buf.format'';
-          mode = "v";
+          mode = [ "n" "v" ];
           key = "<leader>cf";
           options = {
             silent = true;
@@ -44,20 +44,32 @@
           };
         }
         {
-          # action.__raw = ''function() Snacks.picker.lsp_definitions() end'';
-          action.__raw = "vim.lsp.buf.definition";
-          mode = "";
+          action.__raw = ''function() Snacks.picker.lsp_definitions() end'';
+          # action.__raw = "vim.lsp.buf.definition";
+          mode = "n";
           key = "gd";
           options = {
             silent = true;
             buffer = false;
-            # has = "definition";
+            #has = "definition";
             desc = "Goto definition";
           };
         }
         {
-          # action.__raw = ''function() Snacks.picker.lsp_implementations() end'';
-          action.__raw = "vim.lsp.buf.implementation";
+          action.__raw = ''function() Snacks.picker.lsp_declarations() end'';
+          # action.__raw = "vim.lsp.buf.definition";
+          mode = "n";
+          key = "gD";
+          options = {
+            silent = true;
+            buffer = false;
+            desc = "Goto declaration";
+          };
+        }
+
+        {
+          action.__raw = ''function() Snacks.picker.lsp_implementations() end'';
+          # action.__raw = "vim.lsp.buf.implementation";
           mode = "n";
           key = "gi";
           options = {
@@ -67,8 +79,8 @@
           };
         }
         {
-          # action.__raw = ''function() Snacks.picker.lsp_type_definitions() end'';
-          action.__raw = "vim.lsp.buf.type_definition";
+          action.__raw = ''function() Snacks.picker.lsp_type_definitions() end'';
+          # action.__raw = "vim.lsp.buf.type_definition";
           mode = "n";
           key = "gy";
           options = {
@@ -80,8 +92,8 @@
 
         {
 
-          # action.__raw = ''function() Snacks.picker.lsp_references() end'';
-          action.__raw = "vim.lsp.buf.references";
+          action.__raw = ''function() Snacks.picker.lsp_references() end'';
+          # action.__raw = "vim.lsp.buf.references";
           mode = "n";
           key = "gr";
           options = {
@@ -94,9 +106,8 @@
         # Code
 
         {
-
-          # action = ''<cmd>lua Snacks.picker.lsp_code_actions()<cr>'';
-          action.__raw = "vim.lsp.buf.code_action";
+          action.__raw = ''function() Snacks.picker.lsp_code_actions() end'';
+          #action.__raw = "vim.lsp.buf.code_action";
           mode = "n";
           options.desc = "Code Action";
           key = "<leader>ca";
