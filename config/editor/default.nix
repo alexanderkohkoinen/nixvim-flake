@@ -9,6 +9,4 @@
     ./which-key.nix
     ./yanky.nix
   ];
-
-  plugins.numbertoggle.enable = true;
 }

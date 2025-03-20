@@ -55,6 +55,7 @@
       modeline = true;
       modelines = 100;
 
+      number = true;
       relativenumber = true;
 
       scrolloff = 4;
