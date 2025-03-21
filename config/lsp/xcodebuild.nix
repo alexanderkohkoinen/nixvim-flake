@@ -25,9 +25,19 @@
     };
   };
 
+  plugins.which-key.settings.spec = lib.optionals pkgs.stdenv.isDarwin [
+    {
+      __unkeyed = "<leader>dx";
+      group = "xcodebuild";
+    }
+  ];
+
+
   extraPlugins = lib.optionals pkgs.stdenv.isDarwin [
     self.packages.${system}.xcodebuild-nvim
   ];
+
+
 
   keymaps = lib.optionals pkgs.stdenv.isDarwin [
     {
