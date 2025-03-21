@@ -29,6 +29,7 @@
 
       indent.enabled = true;
       scroll.enabled = false;
+      image.enabled = false;
 
       statuscolumn = {
         enabled = true;

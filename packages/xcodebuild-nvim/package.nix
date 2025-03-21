@@ -13,7 +13,7 @@ vimUtils.buildVimPlugin {
     hash = "sha256-GJChZm1AWyjubnKHbgvnq+hkTMAgPVeHlzFs+JZAKAM=";
   };
 
-  dependencies = [ pkgs.vimPlugins.nui-nvim ];
+  dependencies = [ pkgs.vimPlugins.nui-nvim pkgs.vimPlugins.telescope-nvim ];
 
   nvimSkipModule = [
     "xcodebuild.ui.pickers"
