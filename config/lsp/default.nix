@@ -1,4 +1,9 @@
 {
+  system,
+  pkgs,
+  ...
+}:
+{
   imports = [
     # ./ale.nix
     ./dotnet.nix
@@ -11,6 +16,7 @@
     lazyLoad.settings.ft = [ "*" ];
 
     inlayHints = true;
+
     servers = {
       bashls.enable = true;
       clangd.enable = true;
@@ -28,6 +34,8 @@
       tailwindcss.enable = true;
       ts_ls.enable = true;
       yamlls.enable = true;
+
+      sourcekit.enable = pkgs.stdenv.isDarwin;
     };
 
     keymaps = {
@@ -35,7 +43,10 @@
       extra = [
         {
           action.__raw = ''vim.lsp.buf.format'';
-          mode = [ "n" "v" ];
+          mode = [
+            "n"
+            "v"
+          ];
           key = "<leader>cf";
           options = {
             silent = true;
