@@ -21,6 +21,7 @@
           mode = "buffers";
           always_show_bufferlines = true;
           close_command.__raw = mouse.close;
+          seperator_style = "padded_slant";
 
           diagnostics = "nvim_lsp";
           diagnostics_indicator = # Lua

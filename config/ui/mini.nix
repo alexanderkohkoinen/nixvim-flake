@@ -7,6 +7,9 @@
   plugins.mini.mockDevIcons = true;
 
   plugins.mini.modules.animate = {
+    open.enable = false; # Do not animate pickers, presenting a black box on open and close
+    close.enable = false;
+
     resize = {
       timing.__raw = ''require('mini.animate').gen_timing.linear({ duration = 50, unit = 'total' }) '';
     };
