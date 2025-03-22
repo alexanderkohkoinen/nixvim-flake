@@ -8,6 +8,7 @@
   plugins.transparent = {
     enable = true;
     settings = {
+
       extra_groups = [
         "BufferLineTabClose"
         "BufferLineBufferSelected"
@@ -16,14 +17,15 @@
         "BufferLineSeparator"
         "BufferLineIndicatorSelected"
 
-        "lualine"
-
+        # "lualine"
+        "lualine_a_normal"
+        "lualine_b_normal"
+        "lualine_c_normal"
 
         "Snacks"
         "SnacksNormal"
         "SnacksBorder"
       ];
-
     };
   };
 
@@ -41,6 +43,5 @@
       require('transparent').clear_prefix('BufferLine')
       require('transparent').clear_prefix('lualine')
       require('transparent').clear_prefix('Snacks')
-      require('transparent').clear_prefix('snacks_layout_box')
     '';
 }
